@@ -9,19 +9,19 @@ This system is a real-time cryptocurrency trading bot developed in Python, integ
 All trading activity, performance metrics, and live analysis are streamed to a Flask-based web app, creating a dynamic and transparent Performance Dashboard.
 - Status bar:
 ![image](https://github.com/FedeMaguire/TradingBot-Web-App/blob/main/final%20images/status.jpg?raw=true)
-# - Performance of the current trade cycle:
+- Performance of the current trade cycle:
 ![image](https://github.com/FedeMaguire/TradingBot-Web-App/blob/main/final%20images/performance.jpg?raw=true)
 # 
 - Current trade chart
 ![image](https://github.com/FedeMaguire/TradingBot-Web-App/blob/main/final%20images/trade_no_info.jpg?raw=true)
 # 
--Live chart of the last 2 hours of Bitcoin price action
+- Live chart of the last 2 hours of Bitcoin price action
 ![image](https://github.com/FedeMaguire/TradingBot-Web-App/blob/main/final%20images/BTC_2_hours.jpg?raw=true)
 # 
--Full-cycle chart showing BTC price movement throughout the trade
+- Full-cycle chart showing BTC price movement throughout the trade
 ![image](https://github.com/FedeMaguire/TradingBot-Web-App/blob/main/final%20images/btc_cycle.jpg?raw=true)
 # 
--A dynamic data table showing the last 20 data points used in the analysis
+- Dynamic data table showing the last 20 data points used in the analysis
 ![image](https://github.com/FedeMaguire/TradingBot-Web-App/blob/main/final%20images/dataframe.jpg?raw=true)
 # 
 This setup enables transparent monitoring of live trades and automated strategy performance.
