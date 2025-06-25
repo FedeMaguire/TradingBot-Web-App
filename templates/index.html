@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Maguire Data Analytics - Trading Bot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --background: #1a1f2b;
+            --card-bg: #2a2f3d;
+            --text: #f0f0f0;
+            --accent: #f5b841;
+            --border: #444857;
+            --table-bg: #ffffff;
+            --table-text: #000000;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background);
+            color: var(--text);
+        }
+
+        header {
+            background-color: var(--card-bg);
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+            flex-wrap: wrap;
+        }
+
+        header img.logo {
+            height: 60px;
+        }
+
+        header h1 {
+            font-size: 1.2rem;
+            color: var(--accent);
+            text-align: center;
+            margin: 0 0 0 10px;
+            flex-grow: 1;
+            text-shadow: 0px 2px 4px rgba(0,0,0,0.6);
+            padding: 10px;
+        }
+
+        .refresh-icon {
+            margin-left: auto;
+        }
+
+        .container {
+            padding: 30px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .meta-info {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 15px;
+        }
+
+        .meta-info p {
+            margin: 5px 0;
+        }
+
+        .plot-container {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+            padding: 20px;
+            margin-bottom: 30px;
+            border: 1px solid var(--border);
+            width: 100%;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .plot-container .js-plotly-plot,
+        .plot-container .plotly-graph-div {
+            flex-grow: 1;
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        .status-box {
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 30px;
+        }
+
+        .status-inner {
+            background-color: #1a1f2b; /* dark grey inner background */
+            padding: 20px;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+            width: 80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .header-inner {
+            background-color: #1a1f2b; /* dark grey inner background */
+            padding: 20pxp;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+            width: 70%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .status-info {
+            text-align: center;
+            font-weight: bold;
+            color: var(--text);
+            font-size: 16px;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+            font-size: 14px;
+            background-color: var(--table-bg);
+            color: var(--table-text);
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        th {
+            background-color: var(--card-bg);
+            color: var(--text);
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+
+        @media only screen and (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            header h1 {
+                margin: 10px 0;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            table {
+                font-size: 12px;
+            }
+
+            .plot-container {
+                min-height: 300px;
+                padding: 10px;
+            }
+
+            header img.logo {
+                height: 50px;
+            }
+
+            .status-info {
+                font-size: 14px;
+            }
+            .status-box {
+                min-height: 40px;  /* smaller height */
+                padding: 10px;
+            }
+
+            .status-inner {
+                padding: 10px;
+            }
+
+            .meta-info {
+                text-align: center;
+                margin-bottom: 20px;
+                font-size: 10px;
+            }
+
+            .meta-info p {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="header-inner">
+            <img src="/static/animated.svg?{{ timestamp }}" alt="Maguire Data Analytics Logo" class="logo">
+            <h1>Trading Bot Dashboard</h1>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- Status Info -->
+        <div class="plot-container status-box">
+            <div class="status-inner">
+                <div class="status-info">
+                    {{ status | safe }}
+                </div>
+            </div>   
+        </div>
+
+        <!--Remainig time -->
+        <div class="plot-container status-box">
+            <div class="status-info">
+                {{ remaining_time | safe }}
+            </div>
+        </div>
+
+
+        <!-- Plotly Chart -->
+        <div class="plot-container">
+            {{ html_div | safe }}
+        </div>
+
+        <!-- Zoomed 5-Hour Price Chart -->
+        <div class="plot-container">
+            {{ trade_pair_zoomed_plot | safe }}
+        </div>
+
+        <!-- Zoomed 2-Hour Price Chart -->
+        <div class="plot-container">
+            {{ zoomed_price_plot | safe }}
+        </div>
+
+        <!-- Historical Price Chart -->
+        <div class="plot-container">
+            {{ live_price_plot | safe }}
+        </div>
+
+        <!-- Data Table -->
+        <div class="plot-container">
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        {% for col in df.columns %}
+                        <th>{{ col }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in df.itertuples(index=False) %}
+                    <tr>
+                        {% for i in range(df.columns|length) %}
+                        <td data-label="{{ df.columns[i] }}">{{ row[i] }}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Meta Info -->
+        <div class="meta-info">
+            <p><strong>File:</strong> {{ filename }}   <strong>|      Last Updated:</strong> {{ timestamp }}</p>
+        </div>
+
+  <script>
+      // Function to reload the logo with a new timestamp
+      function reloadLogo() {
+          const logo = document.querySelector('img.logo');
+          const baseSrc = "/static/animated.svg";
+          const newSrc = `${baseSrc}?t=${new Date().getTime()}`;
+          logo.src = newSrc;
+      }
+
+      // Initial reload after 20s and then every 30s
+      setInterval(reloadLogo, 20000);
+  </script>
+
+</body>
+</html>
