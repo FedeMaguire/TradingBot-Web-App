@@ -10,8 +10,11 @@ All trading activity, performance metrics, and live analysis are streamed to a F
 - Status bar:
 ![image](https://github.com/FedeMaguire/TradingBot-Web-App/blob/main/final%20images/status.jpg?raw=true)
  # 
--Pperformance of the current trade cycle:
+-Performance of the current trade cycle:
 ![image](https://github.com/FedeMaguire/TradingBot-Web-App/blob/main/final%20images/performance.jpg?raw=true)
+# 
+- Current trade chart
+![image](https://github.com/FedeMaguire/TradingBot-Web-App/blob/main/final%20images/trade_no_info.jpg?raw=true)
 # 
 -Live chart of the last 2 hours of Bitcoin price action
 ![image](https://github.com/FedeMaguire/TradingBot-Web-App/blob/main/final%20images/BTC_2_hours.jpg?raw=true)
