@@ -9,8 +9,7 @@ This system is a real-time cryptocurrency trading bot developed in Python, integ
 All trading activity, performance metrics, and live analysis are streamed to a Flask-based web app, creating a dynamic and transparent Performance Dashboard.
 - Status bar:
 ![image](https://github.com/FedeMaguire/TradingBot-Web-App/blob/main/final%20images/status.jpg?raw=true)
- # 
--Performance of the current trade cycle:
+# - Performance of the current trade cycle:
 ![image](https://github.com/FedeMaguire/TradingBot-Web-App/blob/main/final%20images/performance.jpg?raw=true)
 # 
 - Current trade chart
