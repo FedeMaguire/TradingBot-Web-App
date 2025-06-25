@@ -1,11 +1,11 @@
 # TradingBot-Web-App
-# Python BINANCE Trading Bot with WEB APP Live Dashboard.
+# BINANCE Trading Bot with WEB APP Live Dashboard.
 ![image](https://github.com/FedeMaguire/TradingBot-Web-App/blob/main/final%20images/full_view.jpg?raw=true)
 # Overview
-## This is a real-time data gathering Trading Bot with GUI. Leveraging Binance's API, Pandas and TA library for technical indicators calculations.
-![image](https://github.com/FedeMaguire/Python-Trading-Bot/blob/main/screenshots/Screenshot%202023-11-09%20165227.jpg?raw=true)
+## This is a real-time Binance Trading Bot developed in Python. It streams its performance live to a Flask-based web app, providing real-time updates on trading activity, performance metrics, trading cycle charts, and overall system status.
+![image](https://github.com/FedeMaguire/TradingBot-Web-App/blob/main/final%20images/status.jpg?raw=true)
  # 
-![image](https://github.com/FedeMaguire/Python-Trading-Bot/blob/main/screenshots/Screenshot%202023-11-09%20165411.jpg?raw=true)
+![image](https://github.com/FedeMaguire/TradingBot-Web-App/blob/main/final%20images/performance.jpg?raw=true)
 
 # How it Works
 Live Data is gathered fom Binance using Binance API and a Pandas Frame is generated with the last 200 candles.The trading bot triggers a buy order when a specific condition is met and keeps track of the trade until it needs to be closed based on another condition. It does this by checking for a buy signal generated in a pandas DataFrame corresponding to the Stochastic RSI value K-line equal to or above 0.05, and the previous RSI value K-line was below 0.05. If this condition is met, it places a buy limit order. When an order is placed, the code checks for a sell signal in the same pandas DataFrame corresponding to the RSI value K-line equal to or above 0.9, and the previous RSI value K-line was below 0.9. When this condition is met, the order is closed, and the cycle starts over again.
