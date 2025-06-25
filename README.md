@@ -33,11 +33,19 @@ All charts include interactive hover details.
 #
 - # Libraries
 ```
-import customtkinter
-import os
-from PIL import Image
+from flask import Flask, render_template
 import pandas as pd
+import os
+import ta #Tecnical indicators
+import plotly.express as px
+import plotly.io as pio
 import plotly.graph_objects as go
+import traceback
+from datetime import datetime, timedelta
+import threading
+import subprocess
+import time
+import requests
 ```
  
 
@@ -57,14 +65,12 @@ from pytz import timezone
 from keys import api_key, api_secret
 ```
 # Charts:
-The charts are created using the matplotlib and mplfinance libraries and loaded to the GUI as JPG files every time a new event is scheduled.
 - # Libraries:
 ```
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-import mplfinance as mpf
 ```
 
 
