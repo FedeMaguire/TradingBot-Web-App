@@ -1,20 +1,29 @@
 # TradingBot-Web-App
 # BINANCE Trading Bot with WEB APP Live Dashboard.
 ![image](https://github.com/FedeMaguire/TradingBot-Web-App/blob/main/final%20images/full_view.jpg?raw=true)
-# Overview
+# Trading Bot and Web Dashboard Overview
 ## This is a real-time Binance Trading Bot developed in Python. It streams its performance live to a Flask-based web app, providing real-time updates on trading activity, performance metrics, trading cycle charts, and overall system status.
 ![image](https://github.com/FedeMaguire/TradingBot-Web-App/blob/main/final%20images/status.jpg?raw=true)
  # 
 ![image](https://github.com/FedeMaguire/TradingBot-Web-App/blob/main/final%20images/performance.jpg?raw=true)
 
 # How it Works
-Live Data is gathered fom Binance using Binance API and a Pandas Frame is generated with the last 200 candles.The trading bot triggers a buy order when a specific condition is met and keeps track of the trade until it needs to be closed based on another condition. It does this by checking for a buy signal generated in a pandas DataFrame corresponding to the Stochastic RSI value K-line equal to or above 0.05, and the previous RSI value K-line was below 0.05. If this condition is met, it places a buy limit order. When an order is placed, the code checks for a sell signal in the same pandas DataFrame corresponding to the RSI value K-line equal to or above 0.9, and the previous RSI value K-line was below 0.9. When this condition is met, the order is closed, and the cycle starts over again.
-
+This system is a real-time cryptocurrency trading bot codedmin python integrated with a live web dashboard using Flask and HTML. Market data is continuously fetched from Binance via its official API. The bot monitors price action and technical indicators, and automatically places trades when a predefined condition—specifically, a triple EMA crossover—is detected .All trading activity and live analysis are streamed to a Flask-based web app to create Peeformance Dashboard.
 # Graphical User Interface
+
+All trading activity and live analysis are streamed to a Flask-based web app, which displays:
+-The performance of the current trade cycle
 # 
 ![image](https://github.com/FedeMaguire/Python-Trading-Bot/blob/main/screenshots/Screenshot%202023-11-09%20165322.jpg?raw=true)
 # 
-The GUI is coded using the CustomTkinter library to create an easy-to-use environment with clear sections for CHARTS, TRADES, and SETTINGS. LIGHT and DARK modes are available.**Please note that the SETTINGS section is still a work in progress.**
+
+-A live chart of the last 2 hours of Bitcoin price action
+
+-A full-cycle chart showing BTC price movement throughout the trade
+
+-A dynamic data table showing the last 20 data points used in the analysis
+
+This setup enables transparent monitoring of live trades and automated strategy performance.
 - # Libraries
 ```
 import customtkinter
