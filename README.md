@@ -7,24 +7,30 @@
 # How it Works
 This system is a real-time cryptocurrency trading bot developed in Python, integrated with a live web dashboard built using Flask and HTML. It continuously retrieves market data from Binance through its official API, monitors price action and technical indicators, and automatically places trades based on a predefined strategy—specifically, a triple EMA crossover. 
 All trading activity, performance metrics, and live analysis are streamed to a Flask-based web app, creating a dynamic and transparent Performance Dashboard.
+This setup enables transparent monitoring of live trades and automated strategy performance.
+# 
 - Status bar:
 ![image](https://github.com/FedeMaguire/TradingBot-Web-App/blob/main/final%20images/status.jpg?raw=true)
+# 
 - Performance of the current trade cycle:
 ![image](https://github.com/FedeMaguire/TradingBot-Web-App/blob/main/final%20images/performance.jpg?raw=true)
 # 
-- Current trade chart
+- Current trade chart:
 ![image](https://github.com/FedeMaguire/TradingBot-Web-App/blob/main/final%20images/trade_no_info.jpg?raw=true)
 # 
-- Live chart of the last 2 hours of Bitcoin price action
+- Live chart of the last 2 hours of Bitcoin price action:
 ![image](https://github.com/FedeMaguire/TradingBot-Web-App/blob/main/final%20images/BTC_2_hours.jpg?raw=true)
 # 
 - Full-cycle chart showing BTC price movement throughout the trade
 ![image](https://github.com/FedeMaguire/TradingBot-Web-App/blob/main/final%20images/btc_cycle.jpg?raw=true)
 # 
-- Dynamic data table showing the last 20 data points used in the analysis
+- Dynamic data table showing the last 20 data points used in the analysis:
 ![image](https://github.com/FedeMaguire/TradingBot-Web-App/blob/main/final%20images/dataframe.jpg?raw=true)
 # 
-This setup enables transparent monitoring of live trades and automated strategy performance.
+All charts include interactive hover details.
+![image](https://github.com/FedeMaguire/TradingBot-Web-App/blob/main/final%20images/hover_info.jpg?raw=true)
+![image](https://github.com/FedeMaguire/TradingBot-Web-App/blob/main/final%20images/trade.jpg?raw=true)
+#
 - # Libraries
 ```
 import customtkinter
