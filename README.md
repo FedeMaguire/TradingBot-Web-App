@@ -1,7 +1,7 @@
 # TradingBot-Web-App
 # BINANCE Trading Bot with WEB APP Live Dashboard.
 ## This is a real-time Binance Trading Bot developed in Python. It streams its performance live to a Flask-based web app, providing real-time updates on trading activity, performance metrics, trading cycle charts, and overall system status.
-![image](https://github.com/FedeMaguire/TradingBot-Web-App/blob/main/final%20images/full_view.jpg?raw=true)
+![image](https://github.com/FedeMaguire/TradingBot-Web-App/blob/main/final%20images/full.jpg?raw=true)
 
 # Trading Bot and Web Dashboard Overview
 # How it Works
